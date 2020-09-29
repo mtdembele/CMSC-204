@@ -22,7 +22,10 @@ public class NotationStackTest {
 		stringS.push(b);
 		stringS.push(c);
 		
-		//STUDENT: add setup for doubleS for student tests
+		doubleS = new NotationStack<Double>(5);
+		doubleS.push(12.5);
+		doubleS.push(19.53);
+		doubleS.push(98.5);
 	}
 
 	@After
@@ -67,10 +70,11 @@ public class NotationStackTest {
 	}
 
 	@Test
-	public void testPopStudent() {
+	public void testPopStudent() throws StackUnderflowException {
 		//Use the doubleQ for student tests
-		fail("Not yet implemented");
-	}
+		assertEquals(98.5,doubleS.pop());
+		doubleS.pop();
+		assertEquals(true,doubleS.size()==1);	}
 	
 	@Test
 	public void testTop() throws StackOverflowException, StackUnderflowException {
@@ -113,9 +117,9 @@ public class NotationStackTest {
 	}
 
 	@Test
-	public void testPushStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+	public void testPushStudent() throws StackOverflowException {
+		doubleS.push(43.2);
+		assertEquals(doubleS.toString(),"12.519.5398.543.2");
 	}
 	
 	@Test
@@ -128,10 +132,11 @@ public class NotationStackTest {
 	}
 
 	@Test
-	public void testToStringStudent() {
+	public void testToStringStudent() throws StackOverflowException {
 		//Use the doubleQ for student tests
-		fail("Not yet implemented");
-	}
+		assertEquals(doubleS.toString(),"12.519.5398.5");
+		doubleS.push(83.3);
+		assertEquals(doubleS.toString(),"12.519.5398.583.3");	}
 	
 	@Test
 	public void testToStringDelimiter() throws StackOverflowException {
