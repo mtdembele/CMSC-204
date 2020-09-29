@@ -22,6 +22,11 @@ public class NotationQueueTest {
 		stringQ.enqueue(b);
 		stringQ.enqueue(c);
 		
+		doubleQ = new NotationQueue<Double>(5);
+		doubleQ.enqueue(12.5);
+		doubleQ.enqueue(19.53);
+		doubleQ.enqueue(98.5);
+		
 		//STUDENT: add setup for doubleQ for student tests
 	}
 
@@ -59,9 +64,11 @@ public class NotationQueueTest {
 	}
 	
 	@Test
-	public void testDequeueStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+	public void testDequeueStudent() throws QueueUnderflowException {
+		assertEquals(12.5,doubleQ.dequeue());
+		doubleQ.dequeue();
+		assertEquals(true,doubleQ.size()==1);
+		
 	}
 
 	@Test
@@ -95,9 +102,9 @@ public class NotationQueueTest {
 	}
 
 	@Test
-	public void testEnqueueStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+	public void testEnqueueStudent() throws QueueOverflowException {
+		doubleQ.enqueue(43.2);
+		assertEquals(doubleQ.toString(),"12.519.5398.543.2");
 	}
 
 	@Test
@@ -118,9 +125,10 @@ public class NotationQueueTest {
 	}
 	
 	@Test
-	public void testToStringStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+	public void testToStringStudent() throws QueueOverflowException {
+		assertEquals(doubleQ.toString(),"12.519.5398.5");
+		doubleQ.enqueue(83.3);
+		assertEquals(doubleQ.toString(),"12.519.5398.583.3");
 	}
 
 	@Test
