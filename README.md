@@ -1,1 +1,2 @@
-# CMSC-204
+# CMSC-204 Fall 2020 Montgomery College
+Prof. Sandro Fouche
