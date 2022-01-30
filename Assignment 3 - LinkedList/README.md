@@ -2,7 +2,7 @@
 
 This assingment required me to create generic basic and sorted doubly-linked list classes as well as JUnit tests.
 
-#Concepts Used
+# Concepts Used
 * Generics
 * Linked Lists
 * Sorting
@@ -10,4 +10,4 @@ This assingment required me to create generic basic and sorted doubly-linked lis
 * Iterators
 * Exception Handling
 
-#Screenshots coming soon
+# Screenshots coming soon
