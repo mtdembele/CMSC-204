@@ -8,5 +8,6 @@ This assignment required me to create a database of a student's courses.
 * Linked Lists
 * Read/Write Files
 * Exception Handling
+* JUnit Test
 
 # Screenshots coming soon
